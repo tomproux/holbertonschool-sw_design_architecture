@@ -48,7 +48,7 @@ class CaramelDecorator:
 
     # cost(): self._inner.cost() + 15
     def cost(self) -> int:
-        self._inner.cost() + 15
+        return self._inner.cost() + 15
 
     # description(): self._inner.description() + " + caramel"
     def description(self) -> str:
