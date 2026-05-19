@@ -62,8 +62,9 @@ def main() -> None:
     cup2 = MilkDecorator(SugarDecorator(Coffee()))
     print(cup2.description(), cup2.cost())
 
-    # TODO: build CaramelDecorator(MilkDecorator(SugarDecorator(Coffee()))) and print it
+    # TODO: build CaramelDecorator(MilkDecorator(SugarDecorator(Coffee())))
     cup3 = CaramelDecorator(MilkDecorator(SugarDecorator(Coffee())))
+    # and print it
     print(cup3.description(), cup3.cost())
 
 
