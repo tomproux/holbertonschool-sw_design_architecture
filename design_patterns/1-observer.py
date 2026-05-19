@@ -55,7 +55,7 @@ def main() -> None:
     # TODO: instantiate SmsObserver and subscribe it to topics={"breaking"} only
     sms = SmsObserver()
 
-    subject.subscribe(sms, topic={"breaking"})
+    subject.subscribe(sms, topics={"breaking"})
 
     subject.notify("weather", "rain")
     subject.notify("sports", "goal")
