@@ -42,8 +42,17 @@ class SugarDecorator(Beverage):
 
 
 # TODO: implement CaramelDecorator following the same pattern as MilkDecorator
-# cost(): self._inner.cost() + 15
-# description(): self._inner.description() + " + caramel"
+class CaramelDecorator:
+    def __init__(self, inner: Beverage) -> None:
+        self._inner = inner
+
+    # cost(): self._inner.cost() + 15
+    def cost(self) -> int:
+        self._inner.cost() + 15
+
+    # description(): self._inner.description() + " + caramel"
+    def description(self) -> str:
+        return self._inner.description() + " + caramel"
 
 
 def main() -> None:
@@ -54,6 +63,8 @@ def main() -> None:
     print(cup2.description(), cup2.cost())
 
     # TODO: build CaramelDecorator(MilkDecorator(SugarDecorator(Coffee()))) and print it
+    cup3 = CaramelDecorator(MilkDecorator(SugarDecorator(Coffee())))
+    print(cup3.description(), cup3.cost())
 
 
 if __name__ == "__main__":
