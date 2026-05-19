@@ -1,5 +1,10 @@
 sequenceDiagram
-        actor A
-        actor B
-        A->>B: Hi B
-        B->>A: Hi A
+    participant User
+    participant Library
+    participant Book
+
+    User->>Library: requestCreateLoan()
+    Library->>Book: markAsUnavailable()
+    create participant Loan
+    Library->>Loan: create()
+    Library-->>User: loan created
